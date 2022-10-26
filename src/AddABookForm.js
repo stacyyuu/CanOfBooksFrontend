@@ -16,35 +16,35 @@ class AddABookForm extends React.Component {
             status: event.target.formStatus.value
         }
         console.log('New Book', newBook, ' added');
-        this.props.handleCreateCat(newBook);
+        this.props.handleCreateBook(newBook);
     }
     
     render() {
         return (
             <Container>
                 <Form onSubmit={this.onSubmit}>
-                    <Form.Group controlID='formName'>
+                    <Form.Group controlId='formName'>
                         <Form.Label>Title</Form.Label>
                         <Form.Control
                             type='text'
                             placeholder="Type Book Title Here..."></Form.Control>
                     </Form.Group>
 
-                    <Form.Group controlID='formDescription'>
+                    <Form.Group controlId='formDescription'>
                         <Form.Label>Description</Form.Label>
                         <Form.Control
                             type='text'
                             placeholder="Description of the book..."></Form.Control>
                     </Form.Group>
 
-                    <Form.Group controlID='formStatus'>
+                    <Form.Group controlId='formStatus'>
                         <Form.Label>Status</Form.Label>
                         <Form.Control
                             type='text'
                             placeholder="Write some of your feelings on the book..."></Form.Control>
                     </Form.Group>
 
-                    <Button type="submit">Create Cat!</Button>
+                    <Button type="submit">Index Book!</Button>
 
                 </Form>
             </Container>

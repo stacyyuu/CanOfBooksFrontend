@@ -63,7 +63,7 @@ class BestBooks extends React.Component {
     } catch(error) {
       console.error('Error is in the App.js in the deleteBook Function: ', error);
       // axios sends more info about the error in a response object on the error
-      this.setState({ errorMessage: `Status Code ${error.res.status}: ${error.res.data}`});
+      this.setState({ errorMessage: `Status Code ${error.response.status}: ${error.response.data}`});
     }
   }
 

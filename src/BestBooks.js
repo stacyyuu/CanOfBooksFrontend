@@ -32,7 +32,7 @@ class BestBooks extends React.Component {
     try {
       const config = {
         method: 'post',
-        baseUrl: 'http://localhost:3001',
+        baseURL: 'http://localhost:3001',
         url: '/books',
         data: bookToBeCreated
       }

@@ -46,7 +46,7 @@ class BestBooks extends React.Component {
   
   handleDeleteBook = async (bookToBeDeleted) => {
     try {
-      const proceed = window.confirm(`Do you wish to delete ${bookToBeDeleted.name}?`);
+      const proceed = window.confirm(`Do you wish to delete ${bookToBeDeleted.title}?`);
   
       if (proceed) {
         const config = {

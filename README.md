@@ -34,3 +34,15 @@ Start time: 2340
 Finish time: 0100
 
 Actual time needed to complete: 1 hour 20 minutes
+
+--- 
+
+Name of feature: Update books - Lab 13
+
+Estimate of time needed to complete: 1 hr 30 mins
+
+Start time: 7pm
+
+Finish time: 8:35pm
+
+Actual time needed to complete: 1 hr 35 mins

@@ -13,6 +13,8 @@ import AddABookForm from './AddABookForm';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 
+const API_SERVER = process.env.HEROKU_APP
+
 class App extends React.Component {
     constructor(props) {
       super(props);
@@ -26,7 +28,7 @@ class App extends React.Component {
     componentDidMount = async () => {
       const config = {
         method: 'get',
-        baseURL: 'http://localhost:3001',
+        baseURL: API_SERVER,
         url: '/books'
       }
 
@@ -39,7 +41,7 @@ class App extends React.Component {
       try {
         const config = {
           method: 'post',
-          baseUrl: 'http://localhost:3001',
+          baseUrl: API_SERVER,
           url: '/books',
           data: bookToBeCreated
         }
@@ -58,7 +60,7 @@ class App extends React.Component {
         if (proceed) {
           const config = {
             method: 'delete',
-            baseURL: 'http://localhost:3001',
+            baseURL: API_SERVER,
             url: `/books/${bookToBeDeleted._id}`
           }
   

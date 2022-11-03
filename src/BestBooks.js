@@ -5,8 +5,6 @@ import AddABookForm from './AddABookForm';
 import Button from 'react-bootstrap/Button';
 import UpdateABookForm from './UpdateABookForm';
 
-const API_SERVER = process.env.HEROKU_APP;
-
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +21,7 @@ class BestBooks extends React.Component {
   componentDidMount = async () => {
     const config = {
       method: 'get', // get is the default
-      baseURL: API_SERVER,
+      baseURL: process.env.HEROKU_APP,
       url: '/books' // endpoint
     }
     const response = await axios(config);
@@ -35,7 +33,7 @@ class BestBooks extends React.Component {
     try {
       const config = {
         method: 'post',
-        baseURL: API_SERVER,
+        baseURL: process.env.HEROKU_APP,
         url: '/books',
         data: bookToBeCreated
       }
@@ -54,7 +52,7 @@ class BestBooks extends React.Component {
       if (proceed) {
         const config = {
           method: 'delete',
-          baseURL: API_SERVER,
+          baseURL: process.env.HEROKU_APP,
           url: `/books/${bookToBeDeleted._id}`
         }
 
@@ -74,7 +72,7 @@ class BestBooks extends React.Component {
     try {
       const config = {
         method: 'put',
-        baseURL: API_SERVER,
+        baseURL: process.env.HEROKU_APP,
         url: `/books/${bookToBeUpdated._id}`
       }
       const res = await axios(config);

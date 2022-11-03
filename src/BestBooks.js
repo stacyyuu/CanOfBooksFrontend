@@ -5,7 +5,6 @@ import AddABookForm from './AddABookForm';
 import Button from 'react-bootstrap/Button';
 import UpdateABookForm from './UpdateABookForm';
 
-
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);

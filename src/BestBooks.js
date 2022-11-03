@@ -21,7 +21,7 @@ class BestBooks extends React.Component {
   componentDidMount = async () => {
     const config = {
       method: 'get', // get is the default
-      baseURL: process.env.HEROKU_APP,
+      baseURL: process.env.REACT_APP_API,
       url: '/books' // endpoint
     }
     const response = await axios(config);
@@ -33,7 +33,7 @@ class BestBooks extends React.Component {
     try {
       const config = {
         method: 'post',
-        baseURL: process.env.HEROKU_APP,
+        baseURL: process.env.REACT_APP_API,
         url: '/books',
         data: bookToBeCreated
       }
@@ -52,7 +52,7 @@ class BestBooks extends React.Component {
       if (proceed) {
         const config = {
           method: 'delete',
-          baseURL: process.env.HEROKU_APP,
+          baseURL: process.env.REACT_APP_API,
           url: `/books/${bookToBeDeleted._id}`
         }
 
@@ -72,7 +72,7 @@ class BestBooks extends React.Component {
     try {
       const config = {
         method: 'put',
-        baseURL: process.env.HEROKU_APP,
+        baseURL: process.env.REACT_APP_API,
         url: `/books/${bookToBeUpdated._id}`
       }
       const res = await axios(config);

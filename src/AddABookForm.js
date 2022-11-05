@@ -11,7 +11,7 @@ class AddABookForm extends React.Component {
         const newBook = {
             title: event.target.formName.value,
             description: event.target.formDescription.value,
-            status: event.target.formStatus.value
+            status: event.target.formStatus.value,
         }
         console.log('New Book', newBook, ' added');
         this.props.handleCreateBook(newBook);
@@ -41,7 +41,6 @@ class AddABookForm extends React.Component {
                             type='text'
                             placeholder="Write some of your feelings on the book..."/>
                     </Form.Group>
-
                     <Button type="submit">Index Book!</Button>
 
                 </Form>

@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import AddABookForm from './AddABookForm';
 import Button from 'react-bootstrap/Button';
 import UpdateABookForm from './UpdateABookForm';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -19,7 +20,11 @@ class BestBooks extends React.Component {
   }
   /* TODO: Make a GET request to your API to fetch all the books from the database  */
   componentDidMount = async () => {
+  if (this.props.auth0.isAuthenticated) {
+      const res = await this.props.auth0.getIdTokenClaims();
+      const jwt = res.__raw;
     const config = {
+      headers: { "Authorization": `Bearer ${jwt}` },
       method: 'get', // get is the default
       baseURL: process.env.REACT_APP_API,
       url: '/books' // endpoint
@@ -28,6 +33,7 @@ class BestBooks extends React.Component {
     console.log('DATA: ', response.data);
     this.setState({ books: response.data });
   }
+}
 
   handleCreateBook = async (bookToBeCreated) => {
     try {
@@ -148,4 +154,4 @@ class BestBooks extends React.Component {
     }
   }
 
-export default BestBooks;
+export default withAuth0(BestBooks);

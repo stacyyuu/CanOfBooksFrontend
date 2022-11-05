@@ -3,9 +3,6 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
-
-
-
 class AddABookForm extends React.Component {
 
     handleSubmit = (event) => {

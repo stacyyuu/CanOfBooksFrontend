@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import LogIn from './LogIn';
 import LogOut from './LogOut';
 import Profile from './Profile';
+import { withAuth0 } from '@auth0/auth0-react';
 
 
 class Header extends React.Component {
@@ -32,4 +33,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withAuth0(Header);

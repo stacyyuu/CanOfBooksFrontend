@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import BestBooks from './BestBooks';
-import Profile from './About'
+import About from './About'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -10,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 import { withAuth0 } from '@auth0/auth0-react';
+import Profile from './Profile';
 
 class App extends React.Component {
 
@@ -25,7 +26,12 @@ class App extends React.Component {
             >
             </Route>
             <Route
-              exact path ="/About"
+              exact path ="/about"
+              element={<About />}
+              >
+            </Route>
+            <Route
+              exact path ="/profile"
               element={<Profile />}
               >
             </Route>
